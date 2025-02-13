@@ -38,18 +38,9 @@ ColumnModel:
     var hide_column: Boolean, // Hide from column chooser?
     var formattype: String // Display format (Text, EditText)
     )
-    val tableConfiguration = listOf(
-    ColumnModel(0, "Sno", "sno", true, 80.dp, "number", 32.dp, true, false, "number", false, "Text"),
-    ColumnModel(1, "Emp ID", "empid", false, 180.dp, "number", 32.dp, true, false, "number", true, "Text"),
-    ColumnModel(2, "Name", "empname", false, 180.dp, "string", 32.dp, true, false, "string", true, "Text"),
-    ColumnModel(3, "Role", "emprole", false, 180.dp, "string", 32.dp, true, false, "String", true, "Text"),
-    ColumnModel(4, "Salary", "empsalary", false, 140.dp, "float", 32.dp, true, false, "number", true, "Text"),
-    ColumnModel(5, "Join Date", "empjdate", false, 120.dp, "date", 32.dp, true, true, "string", true, "Text"),
-    ColumnModel(6, "Notes", "notes", false, 180.dp, "string", 32.dp, true, true, "string", true, "EditText"),
-    ColumnModel(7, "Mark", "mark", false, 120.dp, "string", 32.dp, true, false, "string", true, "Text")
-      )   
-
+    
 Using the list Of ColumnModel to define our table configuration
+
        val tableConfiguration = listOf(
           ColumnModel(0, "Sno", "sno", true, 80.dp, "number", 32.dp, true, false, "number", false, "Text"),
           ColumnModel(1, "Emp ID", "empid", false, 180.dp, "number", 32.dp, true, false, "number", true, "Text"),
