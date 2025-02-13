@@ -52,7 +52,71 @@ Using the list Of ColumnModel to define our table configuration
           ColumnModel(7, "Mark", "mark", false, 120.dp, "string", 32.dp, true, false, "string", true, "Text")
       )
 
-    
+Create a variable to set the color of the Grid
+
+      var gridColors: MutableList<Pair<String, Color>> = mutableListOf(
+          Pair("primary_color", Color(0xFF993366)),  
+          Pair("secondary_color", Color.White),     
+          Pair("third_color", Color.Black),         
+          Pair("fourth_color", Color.Gray)          
+      )
+
+Create a list that allows users to choose how many rows to display per page
+
+      var listOfRows = arrayOf(10, 20, 30, 40, 50)
+
+Set Table Height and Width
+
+      var tableHeight = "auto"  // Options: "auto" or a specific value like "400"
+      var tableWidth = "auto"   // Options: "auto" or a specific value like "800"
+
+
+Create a object for jqgridview with previous options then call the Main_screen function from jqgrid object to render the VGrid.
+
+        var grid = jqgridview(
+                        applicationContext,
+                        modifier = Modifier.padding(innerPadding),
+                        tableconfiguration,
+                        copiedFilePath,
+                        listofrows,
+                        gridcolors,
+                        tableheight,
+                        tablewidth
+               )
+      grid.Main_screen(activity = LocalContext.current as Activity)
+
+Sample Code
+
+           var tableconfiguration = listOf(
+                        ColumnModel( 0, "Sno", "sno", true, 80.dp, "number", 32.dp, true, false, "number", false, "Text" ),
+                        ColumnModel( 1, "Emp ID", "empid", false, 180.dp, "number", 32.dp, true, false, "number", true, "Text" ),
+                        ColumnModel( 2, "Name", "empname", false, 180.dp, "string", 32.dp, true, false, "string", true, "Text" ),
+                        ColumnModel( 3, "Role", "emprole", false, 180.dp, "string", 32.dp, true, false, "String", true, "Text" ),
+                        ColumnModel( 4, "Salary", "empsalary", false, 140.dp, "float", 32.dp, true, false, "number", true, "Text" ),
+                        ColumnModel( 5, "Join Date", "empjdate", false, 120.dp, "date", 32.dp, true, true, "string", true, "Text" ),
+                        ColumnModel( 6, "Notes", "notes", false, 180.dp, "string", 32.dp, true, true, "string", true, "EditText" ),
+                        ColumnModel( 7, "Mark", "mark", false, 120.dp, "string", 32.dp, true, false, "string", true, "Text" )
+                    )
+                    var gridcolors: MutableList<Pair<String, Color>> = mutableListOf()
+                    gridcolors.add(Pair("primary_color",Color(0xFF993366)))
+                    gridcolors.add(Pair("secondary_color",Color.White))
+                    gridcolors.add(Pair("third_color",Color.Black))
+                    gridcolors.add(Pair("fourth_color",Color.Gray))
+                    var listofrows = arrayOf(10,20,30,40,50)
+                    var tableheight = "auto"
+                    var tablewidth = "auto"
+                    var grid = jqgridview(
+                        applicationContext,
+                        modifier = Modifier.padding(innerPadding),
+                        tableconfiguration,
+                        copiedFilePath,
+                        listofrows,
+                        gridcolors,
+                        tableheight,
+                        tablewidth
+                    )
+                    grid.Main_screen(activity = LocalContext.current as Activity)
+      
 # Sample Output
 ![Screenshot from 2025-02-13 14-18-21](https://github.com/user-attachments/assets/32ce8596-6229-4d76-bb0a-89cfd9a7cd85)
 
