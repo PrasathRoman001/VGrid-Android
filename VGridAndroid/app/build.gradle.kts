@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.vgrid_android"
+    namespace = "com.vgrid_android.vgrid_android"
     compileSdk = 35
 
     defaultConfig {
