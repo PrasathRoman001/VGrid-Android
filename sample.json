@@ -1,0 +1,13 @@
+[
+  {"sno": 1,"empid" : 101,"empname": "Prasath","emprole": "developer","empsalary":10000,"empjdate":"11-12-2020","notes": "it is testing purpose  hello wolrd...!","mark": 191.5},
+  {"sno": 2,"empid" : 102,"empname": "Hari","emprole": "developer","empsalary":20000,"empjdate":"11-12-2020","notes": "123","mark": 177.75},
+  {"sno": 3,"empid" : 103,"empname": "saravanan","emprole": "tester","empsalary":30000,"empjdate":"11-12-2020","notes": "hello wolrd...!","mark": 199.50},
+  {"sno": 4,"empid" : 104,"empname": "rubinath","emprole": "tester","empsalary":40000,"empjdate":"11-12-2020","notes": "wolrd...!","mark": 180.50},
+  {"sno": 5,"empid" : 105,"empname": "B.Hari","emprole": "support","empsalary":50000,"empjdate":"11-12-2020","notes": "hi prasath","mark": 181.25},
+  {"sno": 6,"empid" : 106,"empname": "Balaji","emprole": "support","empsalary":60000,"empjdate":"11-12-2020","notes": "testing","mark": 181.15},
+  {"sno": 7,"empid" : 107,"empname": "Dayanesh","emprole":"support","empsalary":70000,"empjdate":"11-12-2020","notes": "work","mark": 190.15},
+  {"sno": 8,"empid" : 108,"empname": "Vallarasu","emprole": "tester","empsalary":80000,"empjdate":"09-12-2019","notes": "sample code","mark": 195.25},
+  {"sno": 9,"empid" : 109,"empname": "viji","emprole": "tester","empsalary":90000,"empjdate":"11-12-2020","notes": "doooo","mark": 180.56},
+  {"sno": 10,"empid" : 110,"empname":"Muthukumar","emprole": "developer","empsalary":100000,"empjdate":"11-06-2020","notes": "hari haran","mark": 192.35},
+  {"sno": 11,"empid" : 111,"empname":"deena","emprole": "developer","empsalary":110000,"empjdate":"10-12-2021","notes": "it is testing purpose","mark": 192.45}
+]
