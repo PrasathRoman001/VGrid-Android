@@ -41,7 +41,8 @@ ColumnModel:
     
 Using the list Of ColumnModel to define our table configuration
 
-       val tableConfiguration = listOf(
+
+      val tableConfiguration = listOf(
           ColumnModel(0, "Sno", "sno", true, 80.dp, "number", 32.dp, true, false, "number", false, "Text"),
           ColumnModel(1, "Emp ID", "empid", false, 180.dp, "number", 32.dp, true, false, "number", true, "Text"),
           ColumnModel(2, "Name", "empname", false, 180.dp, "string", 32.dp, true, false, "string", true, "Text"),
@@ -70,14 +71,20 @@ Set Table Height and Width
       var tableHeight = "auto"  // Options: "auto" or a specific value like "400"
       var tableWidth = "auto"   // Options: "auto" or a specific value like "800"
 
+Set The Input File Path of Json File 
 
+      val musicDir = application.getExternalFilesDir(Environment.DIRECTORY_MUSIC)
+      var input_json_file = File(musicDir,"sample.json").toString()
+
+
+      
 Create a object for jqgridview with previous options then call the Main_screen function from jqgrid object to render the VGrid.
 
         var grid = jqgridview(
                         applicationContext,
                         modifier = Modifier.padding(innerPadding),
                         tableconfiguration,
-                        copiedFilePath,
+                        input_json_file,
                         listofrows,
                         gridcolors,
                         tableheight,
