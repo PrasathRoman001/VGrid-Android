@@ -62,16 +62,18 @@ class MainActivity : ComponentActivity() {
                     gridcolors.add(Pair("secondary_color",Color.White))
                     gridcolors.add(Pair("third_color",Color.Black))
                     gridcolors.add(Pair("fourth_color",Color.Gray))
-                    //gridcolors.add(Pair("white",Color.White))
+                    var listofrows = arrayOf(10,20,30,40,50)
+                    var tableheight = "auto"
+                    var tablewidth = "auto"
                     var grid = jqgridview(
                         applicationContext,
                         modifier = Modifier.padding(innerPadding),
                         tableconfiguration,
                         copiedFilePath,
-                        arrayOf(),
+                        listofrows,
                         gridcolors,
-                        "auto",
-                        "auto"
+                        tableheight,
+                        tablewidth
                     )
                     grid.Main_screen(activity = LocalContext.current as Activity)
                 }

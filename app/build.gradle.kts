@@ -1,18 +1,21 @@
 plugins {
-    alias(libs.plugins.android.application)
+    //alias(libs.plugins.android.application)
+   // alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("maven-publish")
+    id("com.android.library")
 }
 
 android {
-    namespace = "com.vgrid_android"
+    namespace = "com.vgrid_android.vgrid_android"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.vgrid_android"
+        //applicationId = "com.vgrid_android"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        /*versionCode = 1
+        versionName = "1.0"*/
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -80,3 +83,19 @@ dependencies {
     implementation ("com.github.PratikFagadiya:FancyJetpackComposeDialog:1.0.2")
 
 }
+
+
+
+    publishing{
+        publications{
+            register<MavenPublication>("release") {
+                //from(components["release"])
+                groupId = "com.vgrid_android"
+                artifactId="vgrid_android"
+                version = "1.0"
+                afterEvaluate {
+                    from(components["release"])
+                }
+            }
+        }
+    }
