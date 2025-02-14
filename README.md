@@ -20,6 +20,16 @@ Technology Stack:
 VGrid-Android simplifies complex data visualization in Android applications, ensuring a smooth user experience with its interactive and flexible table functionalities
 
 # How To Create VGrid
+
+Add the Jitpakc.io Url in the settings.gradle.kts
+
+       maven { url= URI("https://jitpack.io") }
+
+Add the VGrid dependencie iniside the app/build.gradle.kts.
+
+      dependencies{
+         implementation("com.github.PrasathRoman001:VGrid-Android:${latest-Release-Version}")
+      }
    
 ColumnModel:
 
