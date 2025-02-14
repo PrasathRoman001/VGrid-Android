@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="_AOfIqmRVeKXdM4LyqGDHv3jhtjMtkqGI7l1-k63m0w" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VGrid-Android</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <h1>VGrid-Android</h1>
+    <p>VGrid-Android is a dynamic and customizable data grid solution built for Android applications using Jetpack Compose. It enables developers to display JSON data in a structured table format while providing powerful features such as column filtering, sorting, pagination, advanced search, and a column chooser for enhanced usability.</p>
+    
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>Table View for JSON Data:</strong> Displays structured data in a tabular format with a clean UI.</li>
+        <li><strong>Column Filters:</strong> Allows users to filter data by specific column values.</li>
+        <li><strong>Column Sorting:</strong> Enables ascending/descending sorting on each column.</li>
+        <li><strong>Table Pagination:</strong> Supports paginated data display for improved performance.</li>
+        <li><strong>Advanced Search:</strong> Provides multiple search operators for filtering values within a single column.</li>
+        <li><strong>Column Chooser:</strong> Allows users to select and customize visible columns in the table.</li>
+    </ul>
+
+    <h2>Technology Stack</h2>
+    <ul>
+        <li><strong>Language:</strong> Kotlin</li>
+        <li><strong>UI Framework:</strong> Jetpack Compose</li>
+        <li><strong>Data Handling:</strong> JSON Parsing</li>
+        <li><strong>State Management:</strong> ViewModel, LiveData/StateFlow</li>
+    </ul>
+
+    <h2>How To Create VGrid</h2>
+    <p>Add the Jitpack.io URL in the <code>settings.gradle.kts</code>:</p>
+    <pre><code>maven { url= URI("https://jitpack.io") }</code></pre>
+
+    <p>Add the VGrid dependency inside <code>app/build.gradle.kts</code>:</p>
+    <pre><code>dependencies {
+    implementation("com.github.PrasathRoman001:VGrid-Android:${latest-Release-Version}")
+}</code></pre>
+
+    <h2>ColumnModel</h2>
+    <p>VGrid has the <code>ColumnModel</code> class, used to define the columns:</p>
+    <pre><code>data class ColumnModel(
+    var index: Int,
+    var label: String,
+    var name: String,
+    var hidden: Boolean,
+    var width: Dp,
+    var sorttype: String,
+    var height: Dp,
+    var sortable: Boolean,
+    var editable: Boolean,
+    var format: String,
+    var hide_column: Boolean,
+    var formattype: String
+)</code></pre>
+
+    <h2>Sample Code</h2>
+    <pre><code>var tableconfiguration = listOf(
+    ColumnModel(0, "Sno", "sno", true, 80.dp, "number", 32.dp, true, false, "number", false, "Text"),
+    ColumnModel(1, "Emp ID", "empid", false, 180.dp, "number", 32.dp, true, false, "number", true, "Text"),
+    ColumnModel(2, "Name", "empname", false, 180.dp, "string", 32.dp, true, false, "string", true, "Text"),
+    ColumnModel(3, "Role", "emprole", false, 180.dp, "string", 32.dp, true, false, "String", true, "Text"),
+    ColumnModel(4, "Salary", "empsalary", false, 140.dp, "float", 32.dp, true, false, "number", true, "Text"),
+    ColumnModel(5, "Join Date", "empjdate", false, 120.dp, "date", 32.dp, true, true, "string", true, "Text"),
+    ColumnModel(6, "Notes", "notes", false, 180.dp, "string", 32.dp, true, true, "string", true, "EditText"),
+    ColumnModel(7, "Mark", "mark", false, 120.dp, "string", 32.dp, true, false, "string", true, "Text")
+)
+
+var gridcolors = mutableListOf(
+    Pair("primary_color", Color(0xFF993366)),
+    Pair("secondary_color", Color.White),
+    Pair("third_color", Color.Black),
+    Pair("fourth_color", Color.Gray)
+)
+
+var listofrows = arrayOf(10,20,30,40,50)
+var tableheight = "auto"
+var tablewidth = "auto"
+
+var grid = jqgridview(
+    applicationContext,
+    modifier = Modifier.padding(innerPadding),
+    tableconfiguration,
+    copiedFilePath,
+    listofrows,
+    gridcolors,
+    tableheight,
+    tablewidth
+)
+grid.Main_screen(activity = LocalContext.current as Activity)</code></pre>
+
+    <h2>Sample Output</h2>
+    <p><img src="https://github.com/user-attachments/assets/32ce8596-6229-4d76-bb0a-89cfd9a7cd85" alt="VGrid Sample Output"></p>
+</body>
+</html>
